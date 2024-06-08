@@ -7,8 +7,8 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
         '--filter=blob:none',
         'https://github.com/folke/lazy.nvim.git',
         install_path
-      })
-      print("Installing lazy.nvim, please restart Neovim...")
+    })
+    print("Installing lazy.nvim, please restart Neovim...")
 end
 
 vim.cmd([[packadd lazy.nvim]])
@@ -30,7 +30,21 @@ end
 
 local plugins = {
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 }, 
-    { "nvim-treesitter/nvim-treesitter", build = ":TSUpdate" },
+    {
+        "nvim-treesitter/nvim-treesitter",
+        build = ":TSUpdate",
+        config = function()
+            require'nvim-treesitter.configs'.setup {
+                ensure_installed = {
+                    "bash", "c", "cpp", "javascript", "json", "lua", "python", "html", "css", "markdown", "vim", "yaml"
+                }, -- List of parsers to install
+                highlight = {
+                    enable = true,              -- false will disable the whole extension
+                    additional_vim_regex_highlighting = false,
+                },
+            }
+        end,
+    },
     { "hrsh7th/nvim-cmp", event = "InsertEnter" },
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
@@ -41,3 +55,4 @@ local plugins = {
 }
 
 lazy.setup(plugins, {})
+
