@@ -36,7 +36,7 @@ local plugins = {
         config = function()
             require'nvim-treesitter.configs'.setup {
                 ensure_installed = {
-                    "bash", "c", "cpp", "javascript", "json", "lua", "python", "html", "css", "markdown", "vim", "yaml"
+                    "bash", "javascript", "json", "lua", "python", "html", "css", "markdown", "vim", "yaml"
                 }, -- List of parsers to install
                 highlight = {
                     enable = true,              -- false will disable the whole extension
