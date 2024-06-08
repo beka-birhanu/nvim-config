@@ -16,6 +16,7 @@ function M.config()
     "bashls",
     "jsonls",
     "tailwindcss",
+    "yamlls",
   }
 
   require("mason").setup {
