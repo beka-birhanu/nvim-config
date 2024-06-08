@@ -1,5 +1,11 @@
+require "romareo.launch"
 require "romareo.options"
 require "romareo.keymaps"
-require "romareo.plugins"
-require "romareo.colorScheme"
-require "romareo.completion"
+
+spec "romareo.colorscheme"
+spec "romareo.devicons"
+spec "romareo.treesitter"
+spec "romareo.mason"
+spec "romareo.schemastore"
+
+require "romareo.lazy"
