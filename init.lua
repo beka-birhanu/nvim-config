@@ -1,0 +1,5 @@
+require "romareo.options"
+require "romareo.keymaps"
+require "romareo.plugins"
+require "romareo.colorScheme"
+require "romareo.completion"
