@@ -9,7 +9,7 @@ function M.config()
 		["<leader>e"] = { "<cmd>NvimTreeToggle<CR>", "Explorer" },
 	})
 
-	local icons = require("romareo.icons")
+	local icons = require("romareo.plugins.ui.icons")
 
 	require("nvim-tree").setup({
 		hijack_netrw = false,

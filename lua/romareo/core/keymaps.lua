@@ -1,73 +1,63 @@
 local opts = { noremap = true, silent = true }
-
 local term_opts = { silent = true }
 
 -- Shorten function name
-local keymap = vim.api.nvim_set_keymap
+local map = vim.api.nvim_set_keymap
 
---Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- Remap space as leader key
+map("", "<Space>", "<Nop>", opts)  -- Disable space key
+vim.g.mapleader = " "  -- Set space as leader key
+vim.g.maplocalleader = " "  -- Set space as local leader key
 
 -- Modes
---   normal_mode = "n",
---   insert_mode = "i",
---   visual_mode = "v",
---   visual_block_mode = "x",
---   term_mode = "t",
---   command_mode = "c",
+local normal_mode = "n"
+local visual_mode = "v"
+local visual_block_mode = "x"
+local term_mode = "t"
 
--- Normal --
--- Better window navigation
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
-keymap("n", "<C-l>", "<C-w>l", opts)
+-- Normal mode mappings
+map(normal_mode, "<C-h>", "<C-w>h", opts)  -- Navigate left
+map(normal_mode, "<C-j>", "<C-w>j", opts)  -- Navigate down
+map(normal_mode, "<C-k>", "<C-w>k", opts)  -- Navigate up
+map(normal_mode, "<C-l>", "<C-w>l", opts)  -- Navigate right
 
-keymap("n", "<leader>e", ":Lex 20<cr>", opts)
-keymap("n", "<leader>u", "<C-r>", opts)
-keymap("n", "<leader>w", ":w <cr>", opts)
+map(normal_mode, "<leader>e", ":Lex 20<CR>", opts)  -- Open file explorer
+map(normal_mode, "<leader>u", "<C-r>", opts)  -- Redo
+map(normal_mode, "<leader>w", ":w<CR>", opts)  -- Save
+map(normal_mode, "<leader>q", ":q<CR>", opts)  -- Quit
 
--- close window
-vim.api.nvim_set_keymap('n', '<leader>q', ':q<CR>', opts)
+map(normal_mode, "<C-Up>", ":resize +2<CR>", opts)  -- Resize window up
+map(normal_mode, "<C-Down>", ":resize -2<CR>", opts)  -- Resize window down
+map(normal_mode, "<C-Left>", ":vertical resize -2<CR>", opts)  -- Resize window left
+map(normal_mode, "<C-Right>", ":vertical resize +2<CR>", opts)  -- Resize window right
 
--- Resize with arrows
-keymap("n", "<C-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+map(normal_mode, "<s-h>", "^", opts)  -- Move cursor to the beginning of the line
+map(visual_mode, "<s-h>", "^", opts)  -- Move selection start to the beginning of the line
+map(normal_mode, "<s-l>", "g_", opts)  -- Move cursor to the end of the line
+map(visual_mode, "<s-l>", "g_", opts)  -- Move selection end to the end of the line
 
--- Naviagte to line start and end
-keymap( "n", "<s-h>", "^", opts)
-keymap( "v", "<s-h>", "^", opts)
-keymap( "n", "<s-l>", "g_", opts)
-keymap( "v", "<s-l>", "g_", opts)
+map(normal_mode, "<C-a>", "ggVG", opts)  -- Select all (beginning to end of the file)
 
--- Insert --
--- Press jk fast to enter
-keymap("i", "jk", "<ESC>", opts)
+-- Insert mode mappings
+map("i", "jk", "<ESC>", opts)  -- Quickly exit insert mode by typing jk
 
--- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+-- Visual mode mappings
+map(visual_mode, "<", "<gv", opts)  -- Indent left
+map(visual_mode, ">", ">gv", opts)  -- Indent right
 
--- Move text up and down
-keymap("v", "<A-j>", ":m .+1<CR>==", opts)
-keymap("v", "<A-k>", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+map(visual_mode, "<A-j>", ":m '>+1<CR>gv=gv", opts)  -- Move selected text down
+map(visual_mode, "<A-k>", ":m '<-2<CR>gv=gv", opts)  -- Move selected text up
+map(visual_mode, "p", '"_dP', opts)  -- Paste without yanking text
 
--- Visual Block --
--- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+-- Visual block mode mappings
+map(visual_block_mode, "J", ":m '>+1<CR>gv=gv", opts)  -- Move block down
+map(visual_block_mode, "K", ":m '<-2<CR>gv=gv", opts)  -- Move block up
+map(visual_block_mode, "<A-j>", ":m '>+1<CR>gv=gv", opts)  -- Move block down
+map(visual_block_mode, "<A-k>", ":m '<-2<CR>gv=gv", opts)  -- Move block up
 
--- Terminal --
--- Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+-- Terminal mode mappings
+map(term_mode, "<C-h>", "<C-\\><C-N><C-w>h", term_opts)  -- Navigate left in terminal
+map(term_mode, "<C-j>", "<C-\\><C-N><C-w>j", term_opts)  -- Navigate down in terminal
+map(term_mode, "<C-k>", "<C-\\><C-N><C-w>k", term_opts)  -- Navigate up in terminal
+map(term_mode, "<C-l>", "<C-\\><C-N><C-w>l", term_opts)  -- Navigate right in terminal
+

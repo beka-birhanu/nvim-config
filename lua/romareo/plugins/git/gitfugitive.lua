@@ -1,6 +1,5 @@
 local M = {
-  "b0o/schemastore.nvim",
-  lazy = true,
+	"tpope/vim-fugitive",
 }
 
 function M.config() end

@@ -10,7 +10,7 @@ function M.config()
 	local keymap = vim.keymap.set
 	local opts = { noremap = true, silent = true }
 
-	keymap("n", "<leader>m", "<cmd>lua require('romareo.harpoon').mark_file()<cr>", opts)
+	keymap("n", "<leader>m", "<cmd>lua require('romareo.plugins.movement.harpoon').mark_file()<cr>", opts)
 	keymap("n", "<TAB>", "<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>", opts)
 end
 

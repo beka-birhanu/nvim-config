@@ -5,7 +5,7 @@ local M = {
 			"folke/neodev.nvim",
 		},
 	},
-    lazy = false,
+	lazy = false,
 }
 
 M.on_attach = function(_, bufnr)
@@ -36,7 +36,7 @@ function M.config()
 		},
 		["<leader>li"] = { "<cmd>LspInfo<cr>", "Info" },
 		["<leader>lj"] = { "<cmd>lua vim.diagnostic.goto_next()<cr>", "Next Diagnostic" },
-		["<leader>lh"] = { "<cmd>lua require('romareo.lspconfig').toggle_inlay_hints()<cr>", "Hints" },
+		["<leader>lh"] = { "<cmd>lua require('romareo.plugins.movement.lspconfig').toggle_inlay_hints()<cr>", "Hints" },
 		["<leader>lk"] = { "<cmd>lua vim.diagnostic.goto_prev()<cr>", "Prev Diagnostic" },
 		["<leader>ll"] = { "<cmd>lua vim.lsp.codelens.run()<cr>", "CodeLens Action" },
 		["<leader>lq"] = { "<cmd>lua vim.diagnostic.setloclist()<cr>", "Quickfix" },
@@ -51,7 +51,7 @@ function M.config()
 	})
 
 	local lspconfig = require("lspconfig")
-	local icons = require("romareo.icons")
+	local icons = require("romareo.plugins.ui.icons")
 
 	local servers = {
 		"lua_ls",
@@ -107,7 +107,7 @@ function M.config()
 			capabilities = M.common_capabilities(),
 		}
 
-		local require_ok, settings = pcall(require, "romareo.lspsettings." .. server)
+		local require_ok, settings = pcall(require, "romareo.plugins.movement.lspsettings." .. server)
 		if require_ok then
 			opts = vim.tbl_deep_extend("force", settings, opts)
 		end
