@@ -1,6 +1,6 @@
 require "romareo.launch"
 require "romareo.options"
-require "romareo.keymaps"
+require "romareo.core.keymaps"
 
 spec "romareo.colorscheme"
 spec "romareo.devicons"
@@ -11,3 +11,4 @@ spec "romareo.lspconfig"
 spec "romareo.cmp"
 
 require "romareo.lazy"
+
