@@ -1,5 +1,5 @@
 require "romareo.launch"
-require "romareo.options"
+require "romareo.core.options"
 require "romareo.core.keymaps"
 
 spec "romareo.colorscheme"
