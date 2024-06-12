@@ -26,6 +26,11 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 keymap("n", "<leader>e", ":Lex 20<cr>", opts)
+keymap("n", "<leader>u", "<C-r>", opts)
+keymap("n", "<leader>w", ":w <cr>", opts)
+
+-- close window
+vim.api.nvim_set_keymap('n', '<leader>q', ':q<CR>', opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -35,7 +40,9 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
 -- Naviagte to line start and end
 keymap( "n", "<s-h>", "^", opts)
+keymap( "v", "<s-h>", "^", opts)
 keymap( "n", "<s-l>", "g_", opts)
+keymap( "v", "<s-l>", "g_", opts)
 
 -- Insert --
 -- Press jk fast to enter
