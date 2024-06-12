@@ -54,7 +54,6 @@ function M.config()
   end
 
   local icons = require "romareo.icons"
-
   cmp.setup {
     snippet = {
       expand = function(args)
@@ -85,10 +84,10 @@ function M.config()
           luasnip.expand_or_jump()
         elseif check_backspace() then
           fallback()
-          -- require("neotab").tabout()
+          require("neotab").tabout()
         else
           fallback()
-          -- require("neotab").tabout()
+          require("neotab").tabout()
         end
       end, {
         "i",
@@ -109,6 +108,7 @@ function M.config()
     },
     formatting = {
       fields = { "kind", "abbr", "menu" },
+      expandable_indicator = true,  -- Add the expandable_indicator field
       format = function(entry, vim_item)
         vim_item.kind = icons.kind[vim_item.kind]
         vim_item.menu = ({
@@ -134,7 +134,6 @@ function M.config()
       end,
     },
     sources = {
-      { name = "copilot" },
       { name = "nvim_lsp" },
       { name = "luasnip" },
       { name = "cmp_tabnine" },
