@@ -5,7 +5,7 @@ local M = {
 
 function M.config()
     require("FTerm").setup({
-        border = "single",
+        border = "rounded",
         dimensions = {
             height = 0.8,
             width = 0.8,
@@ -13,8 +13,8 @@ function M.config()
     })
 
     local keymap = vim.keymap -- for conciseness
-    keymap.set("n", "<leader>tf", "<cmd>lua require('FTerm').toggle()<cr>", { desc = "Open a floating terminal" })
-    keymap.set("t", "<leader>tf", "<cmd>lua require('FTerm').toggle()<cr>", { desc = "Open a floating terminal" })
+    keymap.set("n", "<A-f>", "<cmd>lua require('FTerm').toggle()<cr>", { desc = "Open a floating terminal" })
+    keymap.set("t", "<A-f>", "<cmd>lua require('FTerm').toggle()<cr>", { desc = "Close a floating terminal" })
 end
 
 return M

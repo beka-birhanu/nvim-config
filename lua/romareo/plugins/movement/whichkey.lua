@@ -9,6 +9,7 @@ function M.config()
 		f = { name = "Find" },
 		l = { name = "LSP" },
 		c = { name = "CPH" },
+        t = {name = "Terminal"}
 	}
 
 	local which_key = require("which-key")
