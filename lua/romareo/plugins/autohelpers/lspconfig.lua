@@ -55,15 +55,7 @@ function M.config()
 
 	local servers = {
 		"lua_ls",
-		"cssls",
-		"html",
-		"tsserver",
-		"eslint",
-		"tsserver",
-		"pyright",
 		"bashls",
-		"jsonls",
-		"yamlls",
 	}
 
 	local default_diagnostic_config = {
