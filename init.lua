@@ -26,6 +26,8 @@ spec "romareo.plugins.autohelpers.ufo"
 -- movement
 spec "romareo.plugins.movement.whichkey"
 spec "romareo.plugins.movement.nvimtree"
+spec "romareo.plugins.movement.fterm"
+spec "romareo.plugins.movement.toggleterm"
 spec "romareo.plugins.movement.telescope"
 spec "romareo.plugins.movement.harpoon"
 spec "romareo.plugins.movement.neoscroll"
