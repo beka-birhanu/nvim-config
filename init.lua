@@ -10,6 +10,7 @@ spec "romareo.plugins.ui.breadcrumbs"
 spec "romareo.plugins.ui.illuminate"
 spec "romareo.plugins.ui.lualine"
 spec "romareo.plugins.ui.navic"
+spec "romareo.plugins.ui.treesittercontext"
 
 -- autohelpers
 spec "romareo.plugins.autohelpers.treesitter"
