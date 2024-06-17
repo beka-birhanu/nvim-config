@@ -9,6 +9,7 @@ function M.config()
 		f = { name = "Find" },
 		l = { name = "LSP" },
 		c = { name = "CPH" },
+        g = {name = "git"},
         t = {name = "Terminal"}
 	}
 

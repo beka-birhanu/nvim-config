@@ -40,5 +40,6 @@ spec "romareo.plugins.cph.cph"
 -- git
 spec "romareo.plugins.git.gitsign"
 spec "romareo.plugins.git.gitfugitive"
+spec "romareo.plugins.git.lazygit"
 
 require "romareo.plugins.utils.lazy"
