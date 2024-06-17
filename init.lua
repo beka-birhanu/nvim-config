@@ -32,6 +32,7 @@ spec "romareo.plugins.movement.telescope"
 spec "romareo.plugins.movement.harpoon"
 spec "romareo.plugins.movement.neoscroll"
 spec "romareo.plugins.movement.neotab"
+spec "romareo.plugins.movement.searchbox"
 
 -- CPH
 spec "romareo.plugins.cph.cph"

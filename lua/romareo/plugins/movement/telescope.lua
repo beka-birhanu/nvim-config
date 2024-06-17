@@ -14,7 +14,6 @@ function M.config()
 		["<leader>ft"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
 		["<leader>fh"] = { "<cmd>Telescope help_tags<cr>", "Help" },
 		["<leader>fl"] = { "<cmd>Telescope resume<cr>", "Last Search" },
-		["<leader>fr"] = { "<cmd>Telescope oldfiles<cr>", "Recent File" },
 	})
 
 	local icons = require("romareo.plugins.ui.icons")
