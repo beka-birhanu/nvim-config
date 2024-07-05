@@ -115,9 +115,9 @@ function M.config()
 		multiple_testing = -1,
 		maximum_time = 5000,
 		output_compare_method = "squish",
-		view_output_diff = false,
+		view_output_diff = true,
 
-		testcases_directory = ".",
+		testcases_directory = "./.testcase",
 		testcases_use_single_file = false,
 		testcases_auto_detect_storage = true,
 		testcases_single_file_format = "$(FNOEXT).testcases",
