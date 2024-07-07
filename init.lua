@@ -39,6 +39,7 @@ spec("romareo.plugins.movement.harpoon")
 spec("romareo.plugins.movement.neoscroll")
 spec("romareo.plugins.movement.neotab")
 spec("romareo.plugins.movement.searchbox")
+spec("romareo.plugins.movement.goto")
 
 -- CPH
 spec("romareo.plugins.cph.cph")

@@ -18,6 +18,10 @@ M.on_attach = function(_, bufnr)
 	keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	keymap(bufnr, "n", "gl", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+	keymap(bufnr, "n", "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", opts)
+	keymap(bufnr, "n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>", opts)
+	keymap(bufnr, "n", "gpi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", opts)
+	keymap(bufnr, "n", "pc", "<cmd>lua require('goto-preview').close_all_win()<CR>", opts)
 end
 
 function M.common_capabilities()
