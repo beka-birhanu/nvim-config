@@ -19,8 +19,9 @@ return {
 				graphql = { "prettierd" },
 				razor = { "prettierd" },
 				lua = { "stylua" },
-				python = { "isort", "black" },
+				python = { "autopep8" },
 				c_sharp = { "csharpier" },
+				go = { "goimports", "gofumpt" },
 			},
 
 			format_after_save = {
