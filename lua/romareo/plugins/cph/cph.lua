@@ -6,10 +6,10 @@ local M = {
 
 function M.config()
 	local wk = require("which-key")
-	wk.register({
-		["<leader>cc"] = { "<cmd>CompetiTest receive contest<cr>", "Receive Contest" },
-		["<leader>cp"] = { "<cmd>CompetiTest receive problem<cr>", "Receive Problem" },
-		["<leader>cr"] = { "<cmd>CompetiTest run<cr>", "Run Test" },
+	wk.add({
+		{ "<leader>cc", "<cmd>CompetiTest receive contest<cr>", desc = "Receive Contest" },
+		{ "<leader>cp", "<cmd>CompetiTest receive problem<cr>", desc = "Receive Problem" },
+		{ "<leader>cr", "<cmd>CompetiTest run<cr>", desc = "Run Test" },
 	})
 	require("competitest").setup({
 

@@ -3,16 +3,6 @@ local M = {
 }
 
 function M.config()
-	local mappings = {
-		q = { "<cmd>confirm q<CR>", "Quit" },
-		v = { "<cmd>vsplit<CR>", "Split" },
-		f = { name = "Find" },
-		l = { name = "LSP" },
-		c = { name = "CPH" },
-        g = {name = "git"},
-        t = {name = "Terminal"}
-	}
-
 	local which_key = require("which-key")
 	which_key.setup({
 		plugins = {
@@ -32,26 +22,40 @@ function M.config()
 				g = false,
 			},
 		},
-		window = {
+		win = {
 			border = "rounded",
-			position = "bottom",
-			padding = { 2, 2, 2, 2 },
+			padding = { 2, 2 },
 		},
-		ignore_missing = true,
+		layout = {
+			align = "left",
+		},
 		show_help = false,
 		show_keys = false,
 		disable = {
 			buftypes = {},
 			filetypes = { "TelescopePrompt" },
 		},
+		icons = {
+			mappings = false, -- Disable icons for mappings
+		},
 	})
 
 	local opts = {
 		mode = "n", -- NORMAL mode
-		prefix = "<leader>",
 	}
 
-	which_key.register(mappings, opts)
+	local mappings = {
+		{
+			{ "<leader>c", group = "cph" },
+			{ "<leader>f", group = "file" },
+			{ "<leader>g", group = "git" },
+			{ "<leader>l", group = "lsp" },
+			{ "<leader>q", "<cmd>confirm q<CR>", desc = "quit" },
+			{ "<leader>t", group = "terminal" },
+			{ "<leader>v", "<cmd>vsplit<CR>", desc = "split" },
+		},
+	}
+	which_key.add(mappings, opts)
 end
 
 return M
