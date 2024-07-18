@@ -21,7 +21,7 @@ M.on_attach = function(_, bufnr)
 	keymap(bufnr, "n", "gpd", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", opts)
 	keymap(bufnr, "n", "gpr", "<cmd>lua require('goto-preview').goto_preview_references()<CR>", opts)
 	keymap(bufnr, "n", "gpi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", opts)
-	keymap(bufnr, "n", "pc", "<cmd>lua require('goto-preview').close_all_win()<CR>", opts)
+	keymap(bufnr, "n", "gpc", "<cmd>lua require('goto-preview').close_all_win()<CR>", opts)
 end
 
 function M.common_capabilities()
@@ -60,7 +60,7 @@ function M.config()
 		"lua_ls",
 		"bashls",
 		"tsserver",
-		"pyright",
+		"pylsp",
 		"html",
 		"cssls",
 		"tailwindcss",
@@ -69,6 +69,7 @@ function M.config()
 		"dockerls",
 		"prismals",
 		"docker_compose_language_service",
+		"gopls",
 	}
 
 	local default_diagnostic_config = {
