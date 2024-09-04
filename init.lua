@@ -29,6 +29,7 @@ spec("romareo.plugins.autohelpers.conform")
 spec("romareo.plugins.autohelpers.surround")
 spec("romareo.plugins.autohelpers.autotag")
 spec("romareo.plugins.autohelpers.luasnip")
+spec("romareo.plugins.autohelpers.liveserver")
 
 -- movement
 spec("romareo.plugins.movement.whichkey")
