@@ -74,3 +74,16 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
 		end
 	end,
 })
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = "go",
+	callback = function()
+		vim.api.nvim_buf_set_keymap(
+			0,
+			"n",
+			"<leader>ge",
+			"oif err != nil {\n\treturn err\n}",
+			{ noremap = true, silent = true }
+		)
+	end,
+})
