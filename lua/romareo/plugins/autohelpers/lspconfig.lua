@@ -76,7 +76,7 @@ function M.config()
 				{ name = "DiagnosticSignInfo", text = icons.diagnostics.Information },
 			},
 		},
-		virtual_text = false,
+		virtual_text = true,
 		update_in_insert = false,
 		underline = true,
 		severity_sort = true,
@@ -89,7 +89,6 @@ function M.config()
 			prefix = "",
 		},
 	}
-
 	vim.diagnostic.config(default_diagnostic_config)
 
 	for _, sign in ipairs(vim.tbl_get(default_diagnostic_config, "signs", "values") or {}) do
