@@ -53,7 +53,7 @@ function M.config()
 	local servers = {
 		"lua_ls",
 		"bashls",
-		"tsserver",
+		"ts_ls",
 		"pylsp",
 		"html",
 		"cssls",
