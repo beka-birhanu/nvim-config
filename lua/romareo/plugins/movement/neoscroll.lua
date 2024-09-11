@@ -31,13 +31,13 @@ function M.config()
 		["<C-d>"] = function()
 			neoscroll.ctrl_d({ duration = 150 })
 		end,
-		["<C-b>"] = function()
+		["<C-k>"] = function()
 			neoscroll.ctrl_b({ duration = 150 })
 		end,
-		["<C-k>"] = function()
+		["<C-j>"] = function()
 			neoscroll.ctrl_f({ duration = 150 })
 		end,
-		["<C-j>"] = function()
+		["<C-y>"] = function()
 			neoscroll.scroll(-0.1, { move_cursor = false, duration = 100 })
 		end,
 		["<C-e>"] = function()
